@@ -1,4 +1,4 @@
-.ComicBox-container {
+.BtcBox-container {
     border: 2px solid black;
     border-radius: 10px;
     background-color: white;
@@ -10,11 +10,11 @@
     align-items: center;
 }
 
-.ComicBox-image {
+.BtcBox-image {
     width: 75%;
 }
 
-.ComicBox-button {
+.BtcBox-button {
     border: 3px solid black;
     background-color: lightgrey;
     appearance: none;
@@ -23,6 +23,6 @@
     margin-bottom: 5px;
 }
 
-.ComicBox-title {
+.BtcBox-titleTime {
     text-align: center;
 }
