@@ -9,11 +9,11 @@ const port = process.env.PORT || 8400;
 server.use(cors());
 server.use(express.static('build'));
 
-server.get('/comic/', (request, response) => {
+server.get('/pricing/', (request, response) => {
   const url = `https://api.coindesk.com/v1/bpi/currentprice.json`;
   axios.get(url)
-    .then((comicResponse) => {
-      response.json(comicResponse.data);
+    .then((priceRequest) => {
+      response.json(priceRequest.data);
     })
     .catch((err) => {
       response.status(500).json({

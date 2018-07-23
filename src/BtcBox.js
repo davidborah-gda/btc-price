@@ -6,7 +6,7 @@ class BtcBox extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      comic: {},
+      price: {},
       success: false,
       error: null,
     };
@@ -18,10 +18,10 @@ class BtcBox extends Component {
 
   refreshPricing() {
   
-    const url = `/comic/`;
+    const url = `/pricing/`;
     axios.get(url).then((response) => {
       this.setState({
-        comic: response.data,
+        price: response.data,
         success: true,
       });
     }).catch((error) => {
@@ -33,7 +33,7 @@ class BtcBox extends Component {
   }
 
   render() {
-    const { success, error, comic } = this.state;
+    const { success, error, price } = this.state;
     if (error) {
       return (
         <p>
@@ -51,19 +51,19 @@ class BtcBox extends Component {
 
     return (
       <div className="BtcBox-container">
-        <h1 className="BtcBox-titleTime">
-          {comic.time.updated}
-        </h1>
+        <h3 className="BtcBox-titleTime">
+          {price.time.updated}
+        </h3>
         <button type="button" onClick={this.refreshPricing.bind(this)} className="BtcBox-button">
         Refresh Pricing
         </button>
-        <h1>{comic.bpi.USD.code}</h1>
-        <h2>{comic.bpi.USD.rate}</h2>
-        <h1>{comic.bpi.GBP.code}</h1>
-        <h2>{comic.bpi.GBP.rate}</h2>
-        <h1>{comic.bpi.EUR.code}</h1>
-        <h2>{comic.bpi.EUR.rate}</h2>
-        <p>{comic.disclaimer}</p>
+        <p>{price.bpi.USD.code}</p>
+        <h2>{price.bpi.USD.rate}</h2>
+        <p>{price.bpi.GBP.code}</p>
+        <h2>{price.bpi.GBP.rate}</h2>
+        <p>{price.bpi.EUR.code}</p>
+        <h2>{price.bpi.EUR.rate}</h2>
+        <p className="disclaimer">{price.disclaimer}</p>
       </div>
     );
   }
