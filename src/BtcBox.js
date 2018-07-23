@@ -13,12 +13,12 @@ class BtcBox extends Component {
   }
 
   componentDidMount() {
-    this.fetchRandomComic();
+    this.refreshPricing();
   }
 
   refreshPricing() {
-    const number = randomNumber(1, 2000);
-    const url = `/comic/${number}`;
+  
+    const url = `/comic/`;
     axios.get(url).then((response) => {
       this.setState({
         comic: response.data,
@@ -52,15 +52,18 @@ class BtcBox extends Component {
     return (
       <div className="BtcBox-container">
         <h1 className="BtcBox-titleTime">
-          {comic.time}
+          {comic.time.updated}
         </h1>
         <button type="button" onClick={this.refreshPricing.bind(this)} className="BtcBox-button">
         Refresh Pricing
         </button>
-        <h1>USD</h1>
-        <h1>GBP</h1>
-        <h1>EUR</h1>
-        <h2>Disclaimer</h2>
+        <h1>{comic.bpi.USD.code}</h1>
+        <h2>{comic.bpi.USD.rate}</h2>
+        <h1>{comic.bpi.GBP.code}</h1>
+        <h2>{comic.bpi.GBP.rate}</h2>
+        <h1>{comic.bpi.EUR.code}</h1>
+        <h2>{comic.bpi.EUR.rate}</h2>
+        <p>{comic.disclaimer}</p>
       </div>
     );
   }
