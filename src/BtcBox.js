@@ -57,12 +57,20 @@ class BtcBox extends Component {
         <button type="button" onClick={this.refreshPricing.bind(this)} className="BtcBox-button">
         Refresh Pricing
         </button>
-        <p>{price.bpi.USD.code}</p>
+        <div className="Fiat-container">
+        <div className="USD">
+        <h1>{price.bpi.USD.code}</h1>
         <h2>{price.bpi.USD.rate}</h2>
-        <p>{price.bpi.GBP.code}</p>
+        </div>
+        <div className="GBP">
+        <h1>{price.bpi.GBP.code}</h1>
         <h2>{price.bpi.GBP.rate}</h2>
-        <p>{price.bpi.EUR.code}</p>
+        </div>
+        <div className="EUR">
+        <h1>{price.bpi.EUR.code}</h1>
         <h2>{price.bpi.EUR.rate}</h2>
+        </div>
+        </div>
         <p className="disclaimer">{price.disclaimer}</p>
       </div>
     );

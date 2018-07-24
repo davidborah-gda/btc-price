@@ -12,7 +12,7 @@
 
 .BtcBox-button {
     border: 3px solid black;
-    background-color: chartreuse;
+    background-color: orange;
     appearance: none;
     font-size: 1.5rem;
     width: 50%;
@@ -21,6 +21,35 @@
 
 .BtcBox-titleTime {
     text-align: center;
+}
+
+.Fiat-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+}
+
+.USD {
+    background-color: red;
+    border: 1px solid black;
+    margin: 0 10px;
+    padding: 0 10px;
+}
+
+.GBP {
+    background-color: lightgreen;
+    border: 1px solid black;
+    margin: 0 10px;
+    padding: 0 10px;
+}
+
+.EUR {
+    background-color: yellow;
+    border: 1px solid black;
+    margin: 0 10px;
+    padding: 0 10px;
 }
 
 .disclaimer {
